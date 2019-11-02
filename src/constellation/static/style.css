@@ -1,0 +1,63 @@
+#mainNav {
+  background-color: #388e3c;
+}
+
+.hero {
+  background: url("images/hawaii-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card {
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background: rgba(136, 255, 133, 0.24); !important;
+}
+
+.card-header{
+  border: none;
+  background-color: transparent;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #388e3c;
+color: black;
+border:0 !important;
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #388e3c;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
