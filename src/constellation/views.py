@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import pyrebase
 
 config = {
@@ -13,4 +14,7 @@ firebase = pyrebase.initialize_app(config)
 # Get a reference to the auth service
 firebase_auth = firebase.auth()
 firebase_database = firebase.database()
+
+def index(request):
+    return render(request, 'index.html')
 

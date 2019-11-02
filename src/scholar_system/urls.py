@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from constellation import views
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('marty/', views.marty, name='marty'),
 ]

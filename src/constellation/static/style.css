@@ -3,7 +3,7 @@
 }
 
 .hero {
-  background: url("../images/hawaii-background.jpg") no-repeat center center fixed;
+  background: url("images/hawaii-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,7 +24,7 @@
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(136, 255, 133, 0.24); !important;
 }
 
 .card-header{

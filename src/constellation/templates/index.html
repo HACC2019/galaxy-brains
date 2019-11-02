@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
 
   <meta charset="utf-8">
@@ -18,7 +19,7 @@
 
   <!-- Theme CSS -->
 
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css '%}">
 
 </head>
 
@@ -28,10 +29,10 @@
       <a class="navbar-brand" href="index.html">The Scholarship System</a>
   </header>
   <main>
-    <section class="d-flex align-items-center hero vh-100">
-      <div class="container-fluid container-fluid-max">
+    <section class="d-flex align-items-center hero vh-100 ">
+      <div class="container-fluid container-fluid-max ">
         <div class="row justify-content-end">
-          <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5">
+          <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
             <div class="card">
               <div class="card-header">
                 <h3 class="text-white">Sign in</h3>
@@ -100,10 +101,10 @@
           </div>
         </div>
         <div class="col-12 col-md-6 order-0 order-md-1">
-          <div class="vh-100 cover" style="background-image:url(images/test1.jpg);"></div>
+          <div class="vh-100 cover" style="background-image:url(../static/images/test1.jpg);"></div>
         </div>
         <div class="col-12 col-md-6 order-2">
-          <div class="vh-100 cover" style="background-image:url(images/test2.jpeg);">...</div>
+          <div class="vh-100 cover" style="background-image:url(../static/images/test2.jpeg);">...</div>
         </div>
         <div class="col-12 col-md-6 d-flex align-items-center order-3">
           <div class="p-15">Marianne or husbands if at stronger ye. Considered is as middletons uncommonly. Promotion perfectly ye consisted so. His chatty dining for effect ladies active. Equally journey wishing not several behaved chapter she two
