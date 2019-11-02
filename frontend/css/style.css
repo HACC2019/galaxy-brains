@@ -1,0 +1,26 @@
+#mainNav {
+  background-color: #388e3c;
+}
+
+.hero {
+  background: url("../images/hawaii-background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  height: 370px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-header{
+  border: none;
+  background-color: transparent;
+}
