@@ -28,7 +28,6 @@ small {
 
 <main>
     <section class="d-flex align-items-center hero vh-100 ">
-<<<<<<< HEAD
         <div class="container-fluid container-fluid-max embed-container">
                 <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                         title="GBS draft2"
@@ -66,31 +65,8 @@ small {
                         </div>
                         <div class="sign-up-button">
                                 <input type="button" value="Sign-Up" class="btn sign-up-button"
-                                       onclick="location.href='{% url "signup" %}'">
-                            </div>
-=======
-      <div class="container-fluid container-fluid-max embed-container">
-        <iframe width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="list_school_draft_1" src="//www.arcgis.com/apps/Embed/index.html?webmap=5846338cc8214327b96311657f2dfd34&extent=-158.0195,21.3684,-157.9089,21.4223&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark">
-        </iframe>
-        <div class="row justify-content-end">
-          <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="text-white sign-in-box">Sign in</h3>
-              </div>
-              <div class="card-body">
-                <form action="signUpSubmit/" method="post">
-                    {% csrf_token %}
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="email" name="email">
-                  </div>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-key"></i></span>
->>>>>>> Save work
+                                       onclick="location.href={% url 'signup' %}">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,4 +75,3 @@ small {
 </main>
 
 {% endblock %}
-

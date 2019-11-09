@@ -18,10 +18,12 @@ firebase_database = firebase.database()
 
 def index(request):
     return render(request, 'index.html')
+
 def createProject(request):
     return render(request, 'createproject.html')
+
 def signup(request):
-    return render(request, 'SignUp.html')
+    return render(request, 'signup.html')
 
 def signInSubmit(request):
     email = request.POST.get('email')
@@ -47,12 +49,20 @@ def landingPage(request):
 def signUpSubmit(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
+    firstName = request.POST.get('firstName')
+    lastName = request.POST.get('lastName')
+    role = request.POST.get('role')
 
-    data = {'name': "Marty"}
+    data = {'firstName': firstName,
+            'lastName': lastName,
+            'role': role,
+            'email': email
+    }
 
     try:
         user = firebase_auth.create_user_with_email_and_password(email, password)
         results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
         return redirect('index')
     except Exception as e:
-        raise
+        messages.success(request, (''))
+        return redirect('signup')
