@@ -18,8 +18,6 @@ firebase_database = firebase.database()
 
 def index(request):
     return render(request, 'index.html')
-def createProject(request):
-    return render(request, 'createproject.html')
 def signup(request):
     return render(request, 'SignUp.html')
 
@@ -44,5 +42,5 @@ def logoutSubmit(request):
 def landingPage(request):
     return render(request, 'landingPage.html')
 
-def project_page(request):
+def projectPage(request):
     return render(request, 'project_page.html')
