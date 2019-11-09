@@ -43,3 +43,16 @@ def logoutSubmit(request):
 
 def landingPage(request):
     return render(request, 'landingPage.html')
+
+def signUpSubmit(request):
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+
+    data = {'name': "Marty"}
+
+    try:
+        user = firebase_auth.create_user_with_email_and_password(email, password)
+        results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
+        return redirect('index')
+    except Exception as e:
+        raise
