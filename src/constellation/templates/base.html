@@ -26,7 +26,7 @@
 </head>
 
 <body>
-	
+
   <header>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
     <a class="navbar-brand" href="">The Scholar System</a>
@@ -38,12 +38,12 @@
 
   {% if messages %}
       {% for message in messages %}
-	<script> 
+	<script>
 	  alert("{{ message }}")
         </script>
       {% endfor %}
   {% endif %}
-
+	
 	{% block content %}
 	{% endblock %}
 </body>
