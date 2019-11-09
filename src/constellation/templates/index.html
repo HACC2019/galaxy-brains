@@ -1,80 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
 <link href="https://fonts.googleapis.com/css?family=Podkova&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Coda&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
-<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+<style>.embed-container {
+    position: fixed;
+    padding-bottom: 80%;
+    height: 0;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+small {
+    position: fixed;
+    z-index: 40;
+    bottom: 0;
+    margin-bottom: -15px;
+}</style>
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Temp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Scholar Systems</title>
 
-  <!-- Custom fonts for this theme -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this theme -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
 
-  <!-- Theme CSS -->
+    <!-- Theme CSS -->
 
-  <!--<link rel="stylesheet" type="text/css" href="{%static 'style.css'%}"> -->
-  <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+
 
 </head>
 
 <body>
-  <header>
+<header>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
-      <a class="navbar-brand" href="index.html">The Scholarship System</a>
-  </header>
-  <main>
-    <section class="d-flex align-items-center hero vh-100 ">
-      <div class="container-fluid container-fluid-max embed-container">
-        <iframe width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="list_school_draft_1" src="//www.arcgis.com/apps/Embed/index.html?webmap=5846338cc8214327b96311657f2dfd34&extent=-158.0195,21.3684,-157.9089,21.4223&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark">
-        </iframe>
-        <div class="row justify-content-end">
-          <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="text-white sign-in-box">Sign in</h3>
-              </div>
-              <div class="card-body">
-                <form>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="username">
-                  </div>
-                  <div class="input-group form-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password" class="form-control" placeholder="password">
-                  </div>
-                  <div class="row align-items-center remember">
-                    <input type="checkbox">Remember Me
-                  </div>
-                  <div class="form-group">
-                    <input type="submit" value="Login" class="btn float-right login_btn">
-                  </div>
+    <a class="navbar-brand" href="">The Scholar System</a>
+    <a class="navbar-brand nav-item" href={% url "createProject" %}>Create Project</a>
 
-                </form>
-                <div class="sign-up-button" >
-                  <input href=""  type="submit" value="Sign-Up" class="btn float-right login_btn">
+    <a class="navbar-brand nav-item" style="float: right;" href={% url "signup" %} >Sign Up</a>
+
+</header>
+
+<main>
+    <section class="d-flex align-items-center hero vh-100 ">
+        <div class="container-fluid embed-container">
+            <iframe width="500" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"
+                    title="GBS draft2"
+                    src="//www.arcgis.com/apps/Embed/index.html?webmap=97a4d004b5c342b3b98e4e527fc9b1e8&extent=-158.2457,21.15,-157.3606,21.6123&zoom=true&previewImage=false&scale=true&legendlayers=true&disable_scroll=false&theme=dark">
+
+            </iframe>
+            <div class="row justify-content-end">
+                <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-white sign-in-box">Sign in</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="password">
+                                </div>
+                                <div class="row align-items-center remember">
+                                    <input type="checkbox">Remember Me
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn float-right login_btn">
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="sign-up-button">
+                            <input type="button" value="Sign-Up" class="btn sign-up-button" onclick="location.href='{% url "signup" %}'">
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        <div class="rectangle"/>
+
+
         </div>
-      </div>
 
     </section>
-  </main>
+</main>
 </body>

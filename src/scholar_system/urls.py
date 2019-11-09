@@ -19,4 +19,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('createProject', views.createProject, name='createProject'),
+    path('signup', views.signup, name='signup')
 ]

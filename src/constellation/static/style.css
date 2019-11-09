@@ -1,6 +1,7 @@
 #mainNav {
   background-color: #085631;
   font-family: Podkova, Serif;
+  position: absolute;
 }
 
 .sign-in-box {
@@ -19,7 +20,6 @@ line-height: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .hero {
-  background: url("images/hawaii-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -90,8 +90,10 @@ background: linear-gradient(0deg, #CAFFE6 0%, rgba(227, 255, 241, 0) 55.85%);
 
 .sign-up-button {
   color: white;
-  background-color: #085631;
+  background-color: #23bfa2;
   width: 100px;
+  border: solid;
+
   font-family: Podkova, Serif;
 }
 
@@ -101,9 +103,20 @@ background-color: white;
 }
 
 .info-header {
-font-family: 'Red Hat Display', sans-serif;
+  font-family: 'Red Hat Display', sans-serif;
   font-style: normal;
-font-weight: normal;
-font-size: 26px;
-line-height: 34px;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 34px;
+}
+
+.rectangle {
+  position: absolute;
+  width: 136px;
+  height: 100px;
+
+  background: #FFFFFF;
+  border: 1px ;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

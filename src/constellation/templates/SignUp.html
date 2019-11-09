@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
+
+<body>
+    <form action="/postsignup/" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name"><br><br>
+        Role: <input type="text" name="role"><br><br>
+        Email: <input type="email" name="email"><br><br>
+        Password: <input type="password" name="password"><br><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+
+</html>
