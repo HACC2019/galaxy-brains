@@ -37,6 +37,8 @@ def signInSubmit(request):
 
 def logoutSubmit(request):
     auth.logout(request)
+    messages.success(request, ('You have been logged out'))
+
     return render(request, 'index.html')
 
 def landingPage(request):
