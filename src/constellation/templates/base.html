@@ -29,7 +29,11 @@
 	
   <header>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
-	<a class="navbar-brand" href="index.html">Scholar System</a>
+    <a class="navbar-brand" href="">The Scholar System</a>
+    <a class="navbar-brand nav-item" href={% url "createProject" %}>Create Project</a>
+
+    <a class="navbar-brand nav-item" style="float: right;" href={% url "signup" %} >Sign Up</a>
+
   </header>
 
   {% if messages %}

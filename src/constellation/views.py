@@ -18,6 +18,10 @@ firebase_database = firebase.database()
 
 def index(request):
     return render(request, 'index.html')
+def createProject(request):
+    return render(request, 'createproject.html')
+def signup(request):
+    return render(request, 'SignUp.html')
 
 def signInSubmit(request):
     email = request.POST.get('email')
