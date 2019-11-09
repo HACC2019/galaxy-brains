@@ -26,14 +26,20 @@
 </head>
 
 <body>
+	
   <header>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
 	<a class="navbar-brand" href="index.html">Scholar System</a>
   </header>
 
+  {% if messages %}
+      {% for message in messages %}
+	<script> 
+	  alert("{{ message }}")
+        </script>
+      {% endfor %}
+  {% endif %}
+
 	{% block content %}
 	{% endblock %}
-
-
-
 </body>
