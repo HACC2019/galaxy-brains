@@ -17,6 +17,3 @@ firebase_database = firebase.database()
 
 def index(request):
     return render(request, 'index.html')
-
-def indexPrime(request):
-	return render(request, 'indexPrime.html')
