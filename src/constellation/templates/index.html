@@ -4,9 +4,9 @@
 <title>Scholar System</title>
 <style>.embed-container {
     position: relative;
+    padding-bottom: 80%;
     height: 0;
     max-width: 100%;
-    margin-top: ;
 }
 
 .embed-container iframe, .embed-container object, .embed-container iframe {
@@ -28,10 +28,10 @@ small {
 
 <main>
     <section class="d-flex align-items-center hero vh-100 ">
-        <div class="container-fluid container-fluid-max embed-container">
-                <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        title="GBS draft2"
-                        src="//www.arcgis.com/apps/Embed/index.html?webmap=97a4d004b5c342b3b98e4e527fc9b1e8&extent=-158.6434,20.8211,-156.8733,21.7463&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark"></iframe>
+        <div class="container-fluid embed-container">
+            <iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    title="GBS draft2"
+                    src="//www.arcgis.com/apps/Embed/index.html?webmap=97a4d004b5c342b3b98e4e527fc9b1e8&extent=-158.6434,20.8211,-156.8733,21.7463&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark"></iframe>
             <div class="row justify-content-end">
                 <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
                     <div class="card">
@@ -57,16 +57,14 @@ small {
                                     <input type="checkbox">Remember Me
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Login" class="btn float-right login_btn">
+                                    <input type="submit" value="Login" class="btn login_btn">
                                 </div>
-
                             </form>
-
                         </div>
                         <div class="sign-up-button">
-                                <input type="button" value="Sign-Up" class="btn sign-up-button"
-                                       onclick="location.href='{% url "signup" %}'">
-                            </div>
+                            <input type="button" value="Sign-Up" class="btn sign-up-button"
+                                   onclick="location.href='{% url 'signup' %}'">
+                        </div>
                     </div>
                 </div>
             </div>

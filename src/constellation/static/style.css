@@ -69,10 +69,10 @@ margin-right: 5px;
 }
 
 .login_btn{
-
 color: black;
 background-color: #388e3c;
 width: 100px;
+  margin-left: 200px;
 }
 
 .login_btn:hover{
