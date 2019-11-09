@@ -18,6 +18,5 @@ from constellation import views
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('indexPrime/', views.indexPrime, name='indexPrime')
+    path('', views.index, name='index')
 ]
