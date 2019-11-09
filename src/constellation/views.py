@@ -64,6 +64,6 @@ def createProjectSubmit(request):
     else:
         school = "high"
 
-    firebase_database.child("projects").child("potential-projects").child(school).child(gradeLevel).(request.POST.get('projectName')).set(data)   
+    firebase_database.child("projects").child("potential-projects").child(school).child(gradeLevel).child(request.POST.get('projectName')).set(data)   
 
     return redirect('landingPage')
