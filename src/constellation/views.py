@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import pyrebase
 
@@ -17,3 +17,17 @@ firebase_database = firebase.database()
 
 def index(request):
     return render(request, 'index.html')
+
+def signInSubmit(request):
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+
+    print(email)
+    print(password)
+
+    try:
+        user = firebase_auth.sign_in_with_email_and_password(email, password)
+    except:
+        return redirect('placeholder')
+
+    return render(request, 'landingPage.html')
