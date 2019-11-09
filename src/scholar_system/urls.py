@@ -22,5 +22,6 @@ urlpatterns = [
     path('signInSubmit/', views.signInSubmit),
     path('landingPage/', views.landingPage, name='landingPage'),
     path('signup', views.signup, name='signup'),
-    path('projectPage/', views.projectPage, name='projectPage')
+    path('projectPage/', views.projectPage, name='projectPage'),
+    path('logoutSubmit', views.logoutSubmit, name='logoutSubmit'),
 ]
