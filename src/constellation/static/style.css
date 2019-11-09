@@ -1,7 +1,15 @@
+main {
+  margin-top: 60px;
+}
+
 #mainNav {
   background-color: #085631;
   font-family: Podkova, Serif;
   position: absolute;
+}
+
+.green-font {
+  color: #085631;
 }
 
 .sign-in-box {
@@ -123,5 +131,8 @@ background-color: white;
 
 .create-page-form {
   positon: absolute;
-  w
+}
+
+.light-green {
+  color: #4caf50;
 }
