@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
-{% load static %}
-<html lang="en">
+{% extends 'base.html' %}
+
+{% block content %}
+
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,6 @@
 </head>
 
   <!-- Theme CSS -->
-  <link rel="stylesheet" type="text/css" href="{%static 'style.css'%}">
 
 <body>
     <form action="/postsignup/" method="post">
@@ -22,4 +22,5 @@
     </form>
 </body>
 
-</html>
+{% endblock %}
+
