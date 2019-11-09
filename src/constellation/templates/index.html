@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css?family=Podkova&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Coda&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
 <head>
 
   <meta charset="utf-8">
@@ -22,7 +23,8 @@
 
   <!-- Theme CSS -->
 
-  <link rel="stylesheet" type="text/css" href="{% static 'style.css '%}">
+  <!--<link rel="stylesheet" type="text/css" href="{%static 'style.css'%}"> -->
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
 
 </head>
 
@@ -33,7 +35,9 @@
   </header>
   <main>
     <section class="d-flex align-items-center hero vh-100 ">
-      <div class="container-fluid container-fluid-max ">
+      <div class="container-fluid container-fluid-max embed-container">
+        <iframe width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="list_school_draft_1" src="//www.arcgis.com/apps/Embed/index.html?webmap=5846338cc8214327b96311657f2dfd34&extent=-158.0195,21.3684,-157.9089,21.4223&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark">
+        </iframe>
         <div class="row justify-content-end">
           <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
             <div class="card">
@@ -72,14 +76,5 @@
       </div>
 
     </section>
-      </div>
-    </section>
-     <div class="gradient-matter "> <! Add info thot to bottom of page>
-        <section>
-          <h3 class="info-header">
-            Info Thot
-          </h3>
-        </section>
-      </div>
   </main>
 </body>

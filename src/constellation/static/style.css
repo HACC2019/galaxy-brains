@@ -36,8 +36,9 @@ line-height: 20px;
 }
 
 .card {
+  position: absolute;
   height: 370px;
-  margin-top: auto;
+  margin-top: 500px;
   margin-bottom: auto;
   width: 400px;
   background: rgba(136, 255, 133, 0.24); !important;
