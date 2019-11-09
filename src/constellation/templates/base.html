@@ -42,6 +42,7 @@
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutSubmit' %} >LOGOUT</a>
       </nav>
     </div>
+
   </header>
 
   {% if messages %}
@@ -52,7 +53,7 @@
   </script>
       {% endfor %}
   {% endif %}
-	
+
 	{% block content %}
 	{% endblock %}
 </body>
