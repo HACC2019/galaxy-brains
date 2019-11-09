@@ -41,7 +41,7 @@ line-height: 20px;
   margin-top: 500px;
   margin-bottom: auto;
   width: 400px;
-  background: rgba(136, 255, 133, 0.24); !important;
+  background: rgba(136, 255, 133, 0.24);
 }
 
 .card-header{
@@ -90,10 +90,10 @@ background: linear-gradient(0deg, #CAFFE6 0%, rgba(227, 255, 241, 0) 55.85%);
 
 .sign-up-button {
   color: white;
-  background-color: #23bfa2;
+  background-color: #23bfa2 !important;;
   width: 100px;
   border: solid;
-
+  border-color: #1d8e75;
   font-family: Podkova, Serif;
 }
 
