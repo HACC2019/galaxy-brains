@@ -1,7 +1,23 @@
 #mainNav {
-  background-color: #388e3c;
+  background-color: #085631;
+  font-family: Podkova, Serif;
 }
 
+.sign-in-box {
+  padding-top: 15px;
+  margin-right: 15px ;
+  padding-left: 10px;
+font-family: Coda;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 20px;
+  width: 100px;
+  height: 40px;
+
+  background: #085631;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .hero {
   background: url("images/hawaii-background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -20,8 +36,9 @@
 }
 
 .card {
+  position: absolute;
   height: 370px;
-  margin-top: auto;
+  margin-top: 500px;
   margin-bottom: auto;
   width: 400px;
   background: rgba(136, 255, 133, 0.24); !important;
@@ -52,6 +69,7 @@ margin-right: 5px;
 }
 
 .login_btn{
+
 color: black;
 background-color: #388e3c;
 width: 100px;
@@ -60,4 +78,32 @@ width: 100px;
 .login_btn:hover{
 color: black;
 background-color: white;
+}
+
+.gradient-matter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+background: linear-gradient(0deg, #CAFFE6 0%, rgba(227, 255, 241, 0) 55.85%);
+}
+
+.sign-up-button {
+  color: white;
+  background-color: #085631;
+  width: 100px;
+  font-family: Podkova, Serif;
+}
+
+.sign-up-button:hover {
+color: black;
+background-color: white;
+}
+
+.info-header {
+font-family: 'Red Hat Display', sans-serif;
+  font-style: normal;
+font-weight: normal;
+font-size: 26px;
+line-height: 34px;
 }
