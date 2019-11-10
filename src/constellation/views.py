@@ -22,8 +22,6 @@ raise Http404
 firebase_auth = firebase.auth()
 firebase_database = firebase.database()
 
-
-
 def f(): 
     global loggedin 
     loggedin = True
@@ -87,3 +85,14 @@ def createProjectSubmit(request):
     firebase_database.child("projects").child("potential-projects").child(school).child(gradeLevel).child(request.POST.get('projectName')).set(data)   
 
     return redirect('landingPage')
+
+def getProjectFromName(name):
+    try:
+        result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
+    except:
+        try:
+            result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
+        except:
+            result = None
+
+    return result
