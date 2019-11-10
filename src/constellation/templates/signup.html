@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+
+
+    <form action="/signupsubmit" method="post">
+        {% csrf_token %}
+        First Name: <input type="text" placeholder="First Name" name="firstName"><br><br>
+        Last Name: <input type="text" placeholder="Last Name" name="lastName"><br><br>
+        Role: <select name="role">
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="community">Community Member</option>
+        </select><br><br>
+        Email: <input type="email" placeholder="Email" name="email"><br><br>
+        Password: <input type="password" placeholder="Email" name="password"><br><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+
+{% endblock %}
