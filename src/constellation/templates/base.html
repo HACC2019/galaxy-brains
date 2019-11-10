@@ -30,22 +30,23 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<!-- <body> -->
 
   <header>
     <div>
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
-      <a class="navbar-brand" href={% url 'index' %}>The Scholar System</a>
-      <a class="navbar-brand nav-item" href={% url 'projectPage' %}>Create Project</a>
-      <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
-      {% if loggedin %}
-      <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutSubmit' %} >LOGOUT</a>
-      {% endif %}
 
+      <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
+      {% if loggedin %}
+      <a class="navbar-brand nav-item" href={% url 'createproject' %}>Create Project</a>
+      <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
+      {% else %}
+      <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
+      {% endif %}
       </nav>
     </div>
-
   </header>
+ <body>
 
   {% if messages %}
       {% for message in messages %}

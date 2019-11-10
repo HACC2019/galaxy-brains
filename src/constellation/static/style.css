@@ -184,3 +184,20 @@ margin: 15px;
   box-shadow: #085631;
   background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%);
 }
+
+.tag-button {
+  background-color: lightseagreen;
+}
+
+.tag-button:hover {
+  background-color: blue;
+}
+
+.first-nav-item {
+  margin-left: 60px;
+}
+
+.logo {
+  width: 10px;
+  height: 10px;
+}

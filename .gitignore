@@ -1,9 +1,11 @@
 *.idea
 venv/
 # Byte-compiled / optimized / DLL files
-__pycache__/
+src/constellation/__pycache__/
+src/scholar_system/__pycache__/
 *.py[cod]
 *$py.class
+src/*.sqlite3
 
 # C extensions
 *.so
