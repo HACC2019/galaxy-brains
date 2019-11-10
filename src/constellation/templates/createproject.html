@@ -1,29 +1,110 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<title>Create Project</title>
+    <title>Create Project</title>
 
 
-<main>
-    <form action="/postcreate/" method="post">
-        {% csrf_token %}
-        Project Name: <input type="text" name="projectName"><br><br>
-        Location: <input type="text" name="location"><br><br>
-        School Name: <input type="text" name="schoolName"><br><br>
-        Teacher Name: <input type="text" name="teacherName"><br><br>
-        Description: <input type="text" name="description"><br><br>
-        <div class="ui left icon right labeled input">
-            <input type="text" placeholder="Enter tags" name="tags"/>
-            <i aria-hidden="true" class="tags icon"></i>
-            <div class="ui tag label label">Add Tag</div>
+    <main>
+        <div class="linear-matter form-box">
+            <div class="input-group mb-3 form-container ">
+                <div class="input-group-prepend">
+                    <form style="margin-top: 50px">
+                        <div class="form-group" style="padding-left: px;">
+                            <label for="project_name">Project Name</label>
+                            <input type="name" class="form-control" id="name"
+                                   placeholder="Enter Project Name">
+                        </div>
+                        <div class="form-row" style="margin-left: 1px;">
+                            <div class="form-group">
+                                <label for="timeframe">Time Frame</label>
+                                <input type="timeframe" class="form-control" id="exampleInputPassword1"
+                                       placeholder="ex. Three 45- to 60-minute class sessions">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="exampleFormControlSelect1">Grade</label>
+                                <select class="form-control" id="grade">
+                                    <option></option>
+                                    <option>K</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInput">Sweat Equity</label>
+                                <input type="sweat_equity" class="form-control" id="sweatequity"
+                                       placeholder="# of Participants Needed">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                                <label for="exampleInput">Project Description</label>
+                                <div class="input-group">
+                                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                                </div>
+                            </div>
+
+                        <div class="form-group">
+                                <label for="exampleInput">Tags</label>
+                                <input type="tags" class="form-control" id="taggs"
+                                       placeholder="e.g ocean, waste control, etc.">
+                            </div>
+                        <div class="form-group row">
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="b-check">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Belonging
+                                </label>
+                            </div>
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="r-check">
+                                <label class="form-check-label" for="-check">
+                                    Responsibility
+                                </label>
+                            </div>
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="e-check">
+                                <label class="form-check-label" for="e-check">
+                                    Equity
+                                </label>
+                            </div>
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="a-check">
+                                <label class="form-check-label" for="a-check">
+                                    Aloha
+                                </label>
+                            </div>
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="t-check">
+                                <label class="form-check-label" for="t-check">
+                                    Total Well-Being
+                                </label>
+                            </div>
+                            <div class="form-check breath-check">
+                                <input class="form-check-input" type="checkbox" value="" id="h-check">
+                                <label class="form-check-label" for="h-check">
+                                    Hawai`i
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Create Project</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        Tags: <input type="text" name="tags"><br><br>
-        Sweat Equity: <input type="text" name="sweatEquity"><br><br>
-        Contact Information: <input type="text" name="contactInformation"><br><br>
-        <input type="submit" value="Create">
-
-    </form>
-</main>
+    </main>
 
 
 

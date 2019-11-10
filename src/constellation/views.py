@@ -82,7 +82,7 @@ def createProjectSubmit(request):
 
     if gradeLevel == 'k' or gradeLevel <= 5:
         school = "elementary"
-    elif gradLevel <= 8:
+    elif gradeLevel <= 8:
         school = "middle"
     else:
         school = "high"
