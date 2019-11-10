@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 import pyrebase
+import json
 
 config = {
     'apiKey': "AIzaSyD4pquYNH5AnnnKTFmdRg0dzooWkwQrj8I",
@@ -21,7 +22,7 @@ firebase_auth = firebase.auth()
 firebase_database = firebase.database()
 
 def index(request):
-    global metadata 
+    global metadata
     print(metadata["loggedin"])
     if metadata["loggedin"]:
         return render(request, 'landingPage.html', metadata)
@@ -32,7 +33,7 @@ def signup(request):
     if metadata["loggedin"]:
         return redirect('404')
     else:
-        return render(request, 'SignUp.html', metadata)
+        return render(request, 'signup.html', metadata)
 
 def signInSubmit(request):
     global metadata
@@ -45,7 +46,29 @@ def signInSubmit(request):
         metadata["loggedin"] = True
     except:
         messages.success(request, ('Invalid Credentials'))
+        return redirect('index')
+    return redirect('index')
 
+def signUpSubmit(request):
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+    firstName = request.POST.get('firstName')
+    lastName = request.POST.get('lastName')
+    role = request.POST.get('role')
+
+    data = {'firstName': firstName,
+            'lastName': lastName,
+            'role': role,
+            'email': email
+    }
+
+    try:
+        user = firebase_auth.create_user_with_email_and_password(email, password)
+        results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
+    except Exception as e:
+        messages.success(request, json.loads(e.args[1])['error']['message'])
+        return redirect('index')
+        
     return redirect('index')
 
 
@@ -57,7 +80,7 @@ def logoutSubmit(request):
     return redirect('index')
 
 def landingPage(request):
-    global metadata 
+    global metadata
     print(f"landingPage: {metadata['loggedin']}")
     return render(request, 'landingPage.html', metadata)
 
@@ -68,7 +91,7 @@ def createproject(request):
     if metadata["loggedin"]:
         return render(request, 'createproject.html', metadata)
     else:
-        return redirect('404') 
+        return redirect('404')
 
 def projectPage(request, project = ""):
     projectdict = getProjectFromName(project)
