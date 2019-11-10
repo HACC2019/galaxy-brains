@@ -123,7 +123,7 @@ background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.create-page-form {
+.linear-matter {
   position: relative;
   width: auto;
   height: 900px;
@@ -166,4 +166,21 @@ footer {
 .text-white {
   color: white;
   border-color: white;
+}
+
+.form-container {
+  position: relative;
+  height: auto;
+  width: auto;
+  padding: 100px;
+  margin-left: 100px;
+}
+
+.breath-check {
+margin: 15px;
+}
+
+.form-box {
+  box-shadow: #085631;
+  background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%);
 }
