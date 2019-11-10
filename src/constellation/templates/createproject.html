@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Create Project</title>
-</head>
+{% block content %}
+<title>Create Project</title>
 
-<body>
-<form action="/postcreate/" method="post">
-  {% csrf_token %}
-  Project Name: <input type="text" name="projectName"><br><br>
-  Location: <input type="text" name="location"><br><br>
-  School Name: <input type="text" name="schoolName"><br><br>
-  Teacher Name: <input type="text" name="teacherName"><br><br>
-  Description: <input type="text" name="description"><br><br>
-  Tags: <input type="text" name="tags"><br><br>
-  Sweat Equity: <input type="text" name="sweatEquity"><br><br>
-  Contact Information: <input type="text" name="contactInformation"><br><br>
-  <input type="submit" value="Create">
-</form>
-</body>
 
-</html>
+<main>
+    <form action="/postcreate/" method="post">
+        {% csrf_token %}
+        Project Name: <input type="text" name="projectName"><br><br>
+        Location: <input type="text" name="location"><br><br>
+        School Name: <input type="text" name="schoolName"><br><br>
+        Teacher Name: <input type="text" name="teacherName"><br><br>
+        Description: <input type="text" name="description"><br><br>
+        <div class="ui left icon right labeled input">
+            <input type="text" placeholder="Enter tags" name="tags"/>
+            <i aria-hidden="true" class="tags icon"></i>
+            <div class="ui tag label label">Add Tag</div>
+        </div>
+        Tags: <input type="text" name="tags"><br><br>
+        Sweat Equity: <input type="text" name="sweatEquity"><br><br>
+        Contact Information: <input type="text" name="contactInformation"><br><br>
+        <input type="submit" value="Create">
+
+    </form>
+</main>
+
+
+
+
+{% endblock %}

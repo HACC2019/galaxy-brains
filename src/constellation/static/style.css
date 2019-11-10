@@ -1,7 +1,10 @@
 #mainNav {
   background-color: #085631;
   font-family: Podkova, Serif;
-  position: absolute;
+}
+
+.light-green {
+  color: #4caf50;
 }
 
 .sign-in-box {
@@ -15,7 +18,6 @@ font-size: 25px;
 line-height: 20px;
   width: 100px;
   height: 40px;
-
   background: #085631;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -69,10 +71,10 @@ margin-right: 5px;
 }
 
 .login_btn{
-
 color: black;
 background-color: #388e3c;
 width: 100px;
+  margin-left: 200px;
 }
 
 .login_btn:hover{
@@ -119,4 +121,49 @@ background-color: white;
   border: 1px ;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-page-form {
+  position: relative;
+  width: auto;
+  height: 900px;
+  margin-bottom: 0px;
+  background: linear-gradient(0.4deg, rgba(202, 255, 230, 0.45) 0.33%, rgba(192, 254, 224, 0) 77.73%);
+}
+
+.light-green {
+  color: #4caf50;
+}
+
+.embed-container {
+    position: absolute;
+    padding-bottom: 80%;
+    height: 0;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+small {
+    position: absolute;
+    z-index: 40;
+    bottom: 0;
+    margin-bottom: -15px;
+}
+
+
+footer {
+  background-color: #085631;
+}
+
+.text-white {
+  color: white;
+  border-color: white;
 }
