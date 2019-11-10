@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 import pyrebase
+import json
 
 config = {
     'apiKey': "AIzaSyD4pquYNH5AnnnKTFmdRg0dzooWkwQrj8I",
@@ -21,9 +22,6 @@ raise Http404
 # Get a reference to the auth service
 firebase_auth = firebase.auth()
 firebase_database = firebase.database()
-
-def f():
-    global loggedin
 
 def f():
     global loggedin
@@ -68,7 +66,7 @@ def signUpSubmit(request):
         results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
         return redirect('index')
     except Exception as e:
-        messages.success(request, (''))
+        messages.success(request, json.loads(e.args[1])['error']['message'])
         return redirect('signup')
 
 

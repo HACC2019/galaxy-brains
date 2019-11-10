@@ -2,13 +2,32 @@
 
 {% block content %}
 <body>
-    <form action="/signUpSubmit/" method="post">
+
+    <form action="/signUpSubmit" method="post">
         {% csrf_token %}
-        Name: <input type="text" name="firstName"><br><br>
-        Name: <input type="text" name="lastName"><br><br>
-        Role: <input type="text" name="role"><br><br>
-        Email: <input type="email" name="email"><br><br>
-        Password: <input type="password" name="password"><br><br>
+        First Name: <input type="text" placeholder="First Name" name="firstName"><br><br>
+        Last Name: <input type="text" placeholder="Last Name" name="lastName"><br><br>
+        Role: <select name="role">
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="community">Community Member</option>
+        </select><br><br>
+        Email: <input type="email" placeholder="Email" name="email"><br><br>
+        Password: <input type="password" placeholder="Email" name="password"><br><br>
+        <input type="submit" value="Sign Up">
+    </form>
+
+    <form action="/signUpSubmit" method="post">
+        {% csrf_token %}
+        First Name: <input type="text" placeholder="First Name" name="firstName"><br><br>
+        Last Name: <input type="text" placeholder="Last Name" name="lastName"><br><br>
+        Role: <select name="role">
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="community">Community Member</option>
+        </select><br><br>
+        Email: <input type="email" placeholder="Email" name="email"><br><br>
+        Password: <input type="password" placeholder="Email" name="password"><br><br>
         <input type="submit" value="Sign Up">
     </form>
 </body>
