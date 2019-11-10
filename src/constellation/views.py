@@ -70,6 +70,10 @@ def createproject(request):
     else:
         return redirect('404') 
 
+def projectPage(request, project = ""):
+    projectdict = getProjectFromName(project)
+    return render(request, 'project_page.html', projectdict)
+
 def pageNotFound(request):
     return render(request, '404.html')
 
