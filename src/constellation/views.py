@@ -59,5 +59,8 @@ def logoutSubmit(request):
 def landingPage(request):
     return render(request, 'landingPage.html', mydict)
 
+def createproject(request):
+    return render(request, 'creatproject.html')
+
 def projectPage(request, project=''):
     return render(request, 'project_page.html')
