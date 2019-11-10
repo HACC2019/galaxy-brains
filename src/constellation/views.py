@@ -87,6 +87,9 @@ def landingPage(request):
 def projectPage(request):
     return render(request, 'project_page.html', metadata)
 
+def projectListCard(request):
+    return render(request, 'projectlistcard.html', metadata)
+
 def createproject(request):
     if metadata["loggedin"]:
         return render(request, 'createproject.html', metadata)
@@ -130,3 +133,7 @@ def getProjectFromName(name):
             result = None
 
     return result
+
+def projectList(request):
+    return render(request, 'projectlist.html', metadata)
+
