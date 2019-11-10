@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.http import HttpResponse, HttpResponseNotFound, Http404
 import pyrebase
 import json
+import re
 
 config = {
     'apiKey': "AIzaSyD4pquYNH5AnnnKTFmdRg0dzooWkwQrj8I",
@@ -23,7 +24,6 @@ firebase_database = firebase.database()
 
 def index(request):
     global metadata
-    print(metadata["loggedin"])
     if metadata["loggedin"]:
         return render(request, 'landingPage.html', metadata)
     else:
@@ -81,7 +81,6 @@ def logoutSubmit(request):
 
 def landingPage(request):
     global metadata
-    print(f"landingPage: {metadata['loggedin']}")
     return render(request, 'landingPage.html', metadata)
 
 def projectPage(request):
@@ -107,21 +106,30 @@ def createProjectSubmit(request):
     data = {
             "description": request.POST.get('description'),
             "sweat": request.POST.get('sweat'),
-            "timeframe": request.POST.get('timeframe')
-            # Need to add breath-standards as well as tags
+            "timeframe": request.POST.get('timeframe'),
+            "grade": request.POST.get('grade'),
+            "tags": {},
+            "name": request.POST.get('projectName'),
+            "breath": {},
             }
-    gradeLevel = request.POST.get('gradeLevel')
 
-    if gradeLevel == 'k' or gradeLevel <= 5:
-        school = "elementary"
-    elif gradeLevel <= 8:
-        school = "middle"
-    else:
-        school = "high"
+    for i in "BREATH":
+        data["breath"][i] = True if request.POST.get(i) == '' else None 
 
-    firebase_database.child("projects").child("potential-projects").child(school).child(gradeLevel).child(request.POST.get('projectName')).set(data)
+    if request.POST.get('tags'):
+        for i in request.POST.get('tags').split(","):
+            if not firebase_database.child("listOfTags").child(i).get().val():
+                messages.success(request, ('Tag is not in database'))
+                return redirect('createproject')
+            data["tags"][i] = True
 
-    return redirect('landingPage')
+    if data["name"] == '':
+        messages.success(request, ('Name is required'))
+        return redirect('createproject')
+
+    print(data)
+    firebase_database.child("projects").child("potential-projects").child(data["name"].lower().replace(" ", "-")).set(data) 
+    return redirect('index')
 
 def getProjectFromName(name):
     try:
