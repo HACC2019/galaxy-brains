@@ -24,5 +24,8 @@ urlpatterns = [
     path('logoutSubmit', views.logoutSubmit, name='logoutSubmit'),
     path('createProject', views.createproject, name='createProject'),
     path('signup', views.signup, name='signup'),
+    path('projectPage/<project>', views.projectPage, name='projectPage'),
     path('projectPage/', views.projectPage, name='projectPage'),
+    path('logoutSubmit', views.logoutSubmit, name='logoutSubmit'),
+    path('createproject/', views.createproject, name='createproject')
 ]
