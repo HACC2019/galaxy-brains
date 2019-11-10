@@ -35,7 +35,8 @@
   <header>
     <div>
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
-      <a class="navbar-brand" href={% url 'index' %}>The Scholar System</a>
+
+      <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
       {% if loggedin %}
       <a class="navbar-brand nav-item" href={% url 'createproject' %}>Create Project</a>
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
