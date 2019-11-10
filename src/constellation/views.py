@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 import pyrebase
 
 config = {
@@ -12,12 +12,27 @@ config = {
 
 firebase = pyrebase.initialize_app(config)
 
+loggedin = False
+mydict = {'loggedin': loggedin}
+
+"""
+raise Http404
+"""
 # Get a reference to the auth service
 firebase_auth = firebase.auth()
 firebase_database = firebase.database()
 
+
+
+def f(): 
+    global loggedin 
+    loggedin = True
+    global mydict
+    mydict = {'loggedin': loggedin}
+
 def index(request):
-    return render(request, 'index.html')
+
+    return render(request, 'index.html', mydict)
 def signup(request):
     return render(request, 'SignUp.html')
 
@@ -31,19 +46,21 @@ def signInSubmit(request):
     except:
         messages.success(request, ('Invalid Credentials'))
         return redirect('index')
-
+    f()
     return redirect('landingPage')
 
 
 def logoutSubmit(request):
     auth.logout(request)
+    messages.success(request, ('You have been logged out'))
+
     return render(request, 'index.html')
 
 def landingPage(request):
-    return render(request, 'landingPage.html')
+    return render(request, 'landingPage.html', mydict)
 
 def createproject(request):
     return render(request, 'creatproject.html')
 
-def projectPage(request):
+def projectPage(request, project=''):
     return render(request, 'project_page.html')
