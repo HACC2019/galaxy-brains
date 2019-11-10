@@ -46,7 +46,7 @@ def signInSubmit(request):
         messages.success(request, ('Invalid Credentials'))
         return redirect('index')
     f()
-    return redirect('landingPage')
+    return redirect('landingpage')
 
 def signUpSubmit(request):
     email = request.POST.get('email')

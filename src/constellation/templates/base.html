@@ -37,7 +37,9 @@
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
       <a class="navbar-brand" href={% url 'index' %}>The Scholar System</a>
       <a class="navbar-brand nav-item first-nav-item" href={% url 'createproject' %}>Create Project</a>
+	  {% if not loggedin %}
       <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
+	  {% endif %}
       {% if loggedin %}
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
       {% endif %}

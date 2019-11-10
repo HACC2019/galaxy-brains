@@ -10,7 +10,7 @@
                     src="//www.arcgis.com/apps/Embed/index.html?webmap=97a4d004b5c342b3b98e4e527fc9b1e8&extent=-158.6434,20.8211,-156.8733,21.7463&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark"></iframe>
 
             {% if loggedin %}
-            {% else %}        
+            {% else %}
             <div class="row justify-content-end">
                 <div class="col-lg-5 col-md-7 col-sm-10 col-xl-5 login_box">
                     <div class="card">
@@ -18,7 +18,7 @@
                             <h3 class="text-white sign-in-box">Sign in</h3>
                         </div>
                         <div class="card-body">
-                            <form action="signInSubmit/" method="post">
+                            <form action="signinsubmit/" method="post">
                                 {% csrf_token %}
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
