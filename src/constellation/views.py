@@ -67,7 +67,7 @@ def signUpSubmit(request):
         return redirect('index')
     except Exception as e:
         messages.success(request, json.loads(e.args[1])['error']['message'])
-        return redirect('signup')
+        return redirect('landingpage')
 
 
 def logoutSubmit(request):
