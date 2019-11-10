@@ -65,8 +65,9 @@ def createproject(request):
 def createproject(request):
     return render(request, 'createproject.html')
 
-def projectPage(request):
-    return render(request, 'project_page.html')
+def projectPage(request, project = ""):
+    projectdict = getProjectFromName(project)
+    return render(request, 'project_page.html', projectdict)
 
 def createProjectPage(request):
     return render(request, 'createproject.html')
