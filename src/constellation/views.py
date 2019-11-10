@@ -33,7 +33,7 @@ def signup(request):
     if metadata["loggedin"]:
         return redirect('404')
     else:
-        return render(request, 'singup.html', metadata)
+        return render(request, 'signup.html', metadata)
 
 def signInSubmit(request):
     global metadata
@@ -65,10 +65,11 @@ def signUpSubmit(request):
     try:
         user = firebase_auth.create_user_with_email_and_password(email, password)
         results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
-        return redirect('index')
     except Exception as e:
         messages.success(request, json.loads(e.args[1])['error']['message'])
-        return redirect('landingpage')
+        return redirect('index')
+        
+    return redirect('index')
 
 
 def logoutSubmit(request):
