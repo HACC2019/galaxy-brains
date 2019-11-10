@@ -192,3 +192,7 @@ margin: 15px;
 .tag-button:hover {
   background-color: blue;
 }
+
+.first-nav-item {
+  margin-left: 600px;
+}
