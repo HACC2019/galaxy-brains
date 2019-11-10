@@ -44,5 +44,5 @@ def logoutSubmit(request):
 def landingPage(request):
     return render(request, 'landingPage.html')
 
-def projectPage(request):
+def projectPage(request, project=''):
     return render(request, 'project_page.html')
