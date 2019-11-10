@@ -45,7 +45,7 @@ def landingPage(request):
     return render(request, 'landingPage.html')
 
 def createproject(request):
-    return render(request, 'creatproject.html')
+    return render(request, 'createproject.html')
 
 def projectPage(request):
     return render(request, 'project_page.html')
