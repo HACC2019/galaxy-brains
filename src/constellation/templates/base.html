@@ -37,11 +37,14 @@
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
       <a class="navbar-brand" href={% url 'index' %}>The Scholar System</a>
       <a class="navbar-brand nav-item" href={% url 'projectPage' %}>Create Project</a>
-
       <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
+      {% if loggedin %}
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutSubmit' %} >LOGOUT</a>
+      {% endif %}
+
       </nav>
     </div>
+
   </header>
 
   {% if messages %}
@@ -53,9 +56,6 @@
       {% endfor %}
   {% endif %}
 
-  <div style="" class="">
-	 {% block content %}
-
-	 {% endblock %}
-  </div>
+	{% block content %}
+	{% endblock %}
 </body>
