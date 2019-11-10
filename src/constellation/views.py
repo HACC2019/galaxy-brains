@@ -22,8 +22,6 @@ raise Http404
 firebase_auth = firebase.auth()
 firebase_database = firebase.database()
 
-
-
 def f(): 
     global loggedin 
     loggedin = True
@@ -31,8 +29,8 @@ def f():
     mydict = {'loggedin': loggedin}
 
 def index(request):
-
     return render(request, 'index.html', mydict)
+
 def signup(request):
     return render(request, 'SignUp.html')
 
@@ -64,3 +62,37 @@ def createproject(request):
 
 def projectPage(request, project=''):
     return render(request, 'project_page.html')
+
+def createProjectPage(request):
+    return render(request, 'createproject.html')
+
+def createProjectSubmit(request):
+    data = {
+            "description": request.POST.get('description'),
+            "sweat": request.POST.get('sweat'),
+            "timeframe": request.POST.get('timeframe')
+            # Need to add breath-standards as well
+            }
+    gradeLevel = request.POST.get('gradeLevel')
+
+    if gradeLevel == 'k' or gradeLevel <= 5:
+        school = "elementary"
+    elif gradLevel <= 8:
+        school = "middle"
+    else:
+        school = "high"
+
+    firebase_database.child("projects").child("potential-projects").child(school).child(gradeLevel).child(request.POST.get('projectName')).set(data)   
+
+    return redirect('landingPage')
+
+def getProjectFromName(name):
+    try:
+        result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
+    except:
+        try:
+            result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
+        except:
+            result = None
+
+    return result
