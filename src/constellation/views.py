@@ -24,8 +24,8 @@ firebase_database = firebase.database()
 
 
 
-def f(): 
-    global loggedin 
+def f():
+    global loggedin
     loggedin = True
     global mydict
     mydict = {'loggedin': loggedin}

@@ -3,7 +3,7 @@
 {% block content %}
 <title>Scholar System</title>
 <style>.embed-container {
-    position: relative;
+    position: absolute;
     padding-bottom: 80%;
     height: 0;
     max-width: 100%;
@@ -15,6 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    margin-top: 50px;
 }
 
 small {
@@ -68,7 +69,7 @@ small {
                             <input type="button" value="Sign-Up" class="btn sign-up-button"
                                    onclick="location.href='{% url 'signup' %}'">
                         </div> -->
-                        
+
                     </div>
                 </div>
             </div>
@@ -77,4 +78,3 @@ small {
 </main>
 
 {% endblock %}
-
