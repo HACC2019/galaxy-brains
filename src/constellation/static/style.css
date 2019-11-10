@@ -1,14 +1,16 @@
 #mainNav {
   background-color: #085631;
   font-family: Podkova, Serif;
-
 }
 
+.light-green {
+  color: #4caf50;
+}
 
 .sign-in-box {
   padding-top: 15px;
   margin-right: 15px ;
-  padding-left: 10px; 
+  padding-left: 10px;
 font-family: Coda;
 font-style: normal;
 font-weight: normal;
@@ -127,7 +129,6 @@ background-color: white;
   height: 900px;
   margin-bottom: 0px;
   background: linear-gradient(0.4deg, rgba(202, 255, 230, 0.45) 0.33%, rgba(192, 254, 224, 0) 77.73%);
-
 }
 
 .light-green {
@@ -155,4 +156,14 @@ small {
     z-index: 40;
     bottom: 0;
     margin-bottom: -15px;
+}
+
+
+footer {
+  background-color: #085631;
+}
+
+.text-white {
+  color: white;
+  border-color: white;
 }
