@@ -28,5 +28,6 @@ urlpatterns = [
 =======
 >>>>>>> Initialized project page
     path('signup', views.signup, name='signup'),
-    path('projectPage/', views.projectPage, name='projectPage')
+    path('projectPage/', views.projectPage, name='projectPage'),
+    path('createproject/', views.createproject, name='createproject')
 ]
