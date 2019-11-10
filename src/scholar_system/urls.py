@@ -19,14 +19,14 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('signInSubmit/', views.signInSubmit),
-    path('landingPage/', views.landingPage, name='landingPage'),
-    path('logoutSubmit', views.logoutSubmit, name='logoutSubmit'),
-    path('createProject', views.createproject, name='createProject'),
+    path('sigininsubmit/', views.signInSubmit),
+    path('landingpage/', views.landingPage, name='landingPage'),
+    path('logoutsubmit', views.logoutSubmit, name='logoutSubmit'),
+    path('createproject', views.createproject, name='createProject'),
     path('signup', views.signup, name='signup'),
-    path('projectPage/<project>', views.projectPage, name='projectPage'),
-    path('projectPage/', views.projectPage, name='projectPage'),
-    path('logoutSubmit', views.logoutSubmit, name='logoutSubmit'),
+    path('projectpage/<project>', views.projectPage, name='projectPage'),
+    path('projectpage/', views.projectPage, name='projectPage'),
+    path('logoutsubmit', views.logoutSubmit, name='logoutSubmit'),
     path('createproject/', views.createproject, name='createproject'),
     path('404/', views.pageNotFound, name='404'),
 ]
