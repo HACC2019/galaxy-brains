@@ -13,26 +13,61 @@
           <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Grade: {{ grade }} </strong></h6>
           <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Sweat Equity: {{ sweat }} </strong></h6>
           <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Timeframe: {{ timeframe }} </strong></h6>
-          <p>{{ description }}</p>
-          
+          <p> <h4 class="pb-1 light-green">Project Description:</h4> {{ description }}</p>
           <div class="row">
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> B </h7>
+              <h7>
+                {% if breath.B %}
+                <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %}
+                B </h7>
             </div>
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> R </h7>
+              <h7>
+                {% if breath.R %}
+                  <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                  <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %} 
+                R </h7>
             </div>
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> E </h7>
+              <h7>
+                {% if breath.E %}
+                  <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                  <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %} 
+                E </h7>
             </div>
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> A </h7>
+              <h7>
+                {% if breath.A %}
+                  <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                  <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %} 
+                A </h7>
             </div>
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> T </h7>
+              <h7>
+                {% if breath.T %}
+                  <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                  <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %}
+                T </h7>
             </div>
             <div class="col-2">
-              <h7><i class="fas fa-check"></i> H </h7>
+              <h7>
+                {% if breath.H %}
+                  <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
+                {% else %}
+                  <i class="fas fa-check" style="color:black;"></i> 
+                {% endif %} 
+                H </h7>
             </div>
           </div>
         </div>
