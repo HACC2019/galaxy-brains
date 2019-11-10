@@ -48,6 +48,9 @@ def landingPage(request):
 def projectPage(request):
     return render(request, 'project_page.html')
 
+def createProjectPage(request):
+    return render(request, 'createproject.html')
+
 def createProjectSubmit(request):
     data = {
             "description": request.POST.get('description'),
