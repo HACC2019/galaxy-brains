@@ -84,8 +84,9 @@ def createproject(request):
 def createproject(request):
     return render(request, 'createproject.html')
 
-def projectPage(request):
-    return render(request, 'project_page.html')
+def projectPage(request, project = ""):
+    projectdict = getProjectFromName(project)
+    return render(request, 'project_page.html', projectdict)
 
 def createProjectPage(request):
     return render(request, 'createproject.html')
@@ -101,7 +102,7 @@ def createProjectSubmit(request):
 
     if gradeLevel == 'k' or gradeLevel <= 5:
         school = "elementary"
-    elif gradLevel <= 8:
+    elif gradeLevel <= 8:
         school = "middle"
     else:
         school = "high"

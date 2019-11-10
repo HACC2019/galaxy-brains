@@ -36,10 +36,10 @@
     <div>
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
       <a class="navbar-brand" href={% url 'index' %}>The Scholar System</a>
-      <a class="navbar-brand nav-item" href={% url 'projectPage' %}>Create Project</a>
+      <a class="navbar-brand nav-item first-nav-item" href={% url 'createproject' %}>Create Project</a>
       <a class="navbar-brand nav-item" style="float: right;" href={% url 'signup' %} >Sign Up</a>
       {% if loggedin %}
-      <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutSubmit' %} >LOGOUT</a>
+      <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
       {% endif %}
 
       </nav>
@@ -61,7 +61,7 @@
 </body>
 
 <footer>
-  <div class="container mt-5 text-white">
+  <div class="container mt-5 text-white footer">
     <div class="row">
       <div class="col mt-5">
         <h6 class="text-uppercase font-weight-bold">
