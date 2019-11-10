@@ -24,8 +24,13 @@ firebase_database = firebase.database()
 
 
 
+<<<<<<< HEAD
 def f():
     global loggedin
+=======
+def f():
+    global loggedin
+>>>>>>> 38ced37067353d10766c7ddc81c14ca436083202
     loggedin = True
     global mydict
     mydict = {'loggedin': loggedin}
@@ -58,6 +63,9 @@ def logoutSubmit(request):
 
 def landingPage(request):
     return render(request, 'landingPage.html', mydict)
+
+def createproject(request):
+    return render(request, 'createproject.html')
 
 def projectPage(request, project=''):
     return render(request, 'project_page.html')
