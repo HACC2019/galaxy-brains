@@ -21,6 +21,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('signinsubmit/', views.signInSubmit),
     path('landingpage/', views.landingPage, name='landingpage'),
+<<<<<<< HEAD
     path('logoutsubmit', views.logoutSubmit, name='logoutsubmit'),
     path('createproject', views.createproject, name='createProject'),
     path('signup/', views.signup, name='signup'),
@@ -29,4 +30,13 @@ urlpatterns = [
     path('createproject/', views.createproject, name='createproject'),
     path('signupsubmit', views.signUpSubmit),
     path('404/', views.pageNotFound, name='404'),
+=======
+    path('logoutsubmit', views.logoutSubmit, name='logoutSubmit'),
+    path('createproject/', views.createproject, name='createProject'),
+    path('signup/', views.signup, name='signup'),
+    path('projectpage/<project>', views.projectPage, name='projectPage'),
+    path('projectpage/', views.projectPage, name='projectPage'),
+    path('logoutsubmit', views.logoutSubmit, name='logoutSubmit'),
+    path('createproject/', views.createproject, name='createproject')
+>>>>>>> master
 ]
