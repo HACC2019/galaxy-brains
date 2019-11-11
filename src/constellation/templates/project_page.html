@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <Title>{{ name }}</Title>
+    <Title>{{ project_information.name }}</Title>
 <main>
   <section>
     <div class="container-fluid" style="margin-top: 125px ">
@@ -11,15 +11,15 @@
         <div class="col-6">
           <h2 class="font-weight-bold green-font">{{ name }} </h2>
           <hr>
-          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Grade: {{ grade }} </strong></h6>
-          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Sweat Equity: {{ sweat }} </strong></h6>
-          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Timeframe: {{ timeframe }} </strong></h6>
+          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Grade: {{ project_information.grade }} </strong></h6>
+          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Sweat Equity: {{ project_information.sweat }} </strong></h6>
+          <h6 class="pb-1 light-green"><i class="fas fa-graduation-cap"></i><strong> Timeframe: {{ project_information.timeframe }} </strong></h6>
 
-          <h4 class="pb-1 light-green">Project Description:</h4>  <p>{{ description }}</p>
+          <h4 class="pb-1 light-green">Project Description:</h4>  <p>{{ project_information.description }}</p>
           <div class="row">
             <div class="col-2">
               <h7>
-                {% if breath.B %}
+                {% if project_information.breath.B %}
                 <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                 <i class="fas fa-check" style="color:black;"></i> 
@@ -28,7 +28,7 @@
             </div>
             <div class="col-2">
               <h7>
-                {% if breath.R %}
+                {% if project_information.breath.R %}
                   <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                   <i class="fas fa-check" style="color:black;"></i> 
@@ -37,7 +37,7 @@
             </div>
             <div class="col-2">
               <h7>
-                {% if breath.E %}
+                {% if project_information.breath.E %}
                   <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                   <i class="fas fa-check" style="color:black;"></i> 
@@ -46,7 +46,7 @@
             </div>
             <div class="col-2">
               <h7>
-                {% if breath.A %}
+                {% if project_information.breath.A %}
                   <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                   <i class="fas fa-check" style="color:black;"></i> 
@@ -55,7 +55,7 @@
             </div>
             <div class="col-2">
               <h7>
-                {% if breath.T %}
+                {% if project_information.breath.T %}
                   <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                   <i class="fas fa-check" style="color:black;"></i> 
@@ -64,7 +64,7 @@
             </div>
             <div class="col-2">
               <h7>
-                {% if breath.H %}
+                {% if project_information.breath.H %}
                   <i class="fas fa-check" style="color:MediumSeaGreen;"></i> 
                 {% else %}
                   <i class="fas fa-check" style="color:black;"></i> 

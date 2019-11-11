@@ -25,7 +25,6 @@ urlpatterns = [
     path('createproject', views.createproject, name='createProject'),
     path('signup/', views.signup, name='signup'),
     path('projectpage/<project>', views.projectPage, name='projectPage'),
-    path('projectpage/', views.projectPage, name='projectPage'),
     path('projectlisting/', views.projectList, name='projectList'),
     path('createproject/', views.createproject, name    ='createproject'),
     path('projectlistcard/', views.projectListCard, name='projectListCard'),
