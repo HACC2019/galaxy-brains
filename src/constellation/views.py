@@ -83,9 +83,6 @@ def landingPage(request):
     global metadata
     return render(request, 'landingPage.html', metadata)
 
-def projectPage(request):
-    return render(request, 'project_page.html', metadata)
-
 def projectListCard(request):
     return render(request, 'projectlistcard.html', metadata)
 
@@ -96,8 +93,8 @@ def createproject(request):
         return redirect('404')
 
 def projectPage(request, project = ""):
-    projectdict = getProjectFromName(project)
-    return render(request, 'project_page.html', projectdict)
+    metadata["project_information"] = getProjectFromName(project)
+    return render(request, 'project_page.html', metadata)
 
 def pageNotFound(request):
     return render(request, '404.html')
@@ -127,7 +124,6 @@ def createProjectSubmit(request):
         messages.success(request, ('Name is required'))
         return redirect('createproject')
 
-    print(data)
     firebase_database.child("projects").child("potential-projects").child(data["name"].lower().replace(" ", "-")).set(data) 
     return redirect('index')
 
@@ -144,5 +140,6 @@ def getProjectFromName(name):
 
 def projectList(request):
     global metadata
+    metadata["projects"] = firebase_database.child("projects").child("approved-projects").get().val() 
     return render(request, 'projectlist.html', metadata)
 
