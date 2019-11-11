@@ -143,5 +143,6 @@ def getProjectFromName(name):
     return result
 
 def projectList(request):
+    global metadata
     return render(request, 'projectlist.html', metadata)
 

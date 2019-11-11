@@ -7,6 +7,10 @@
   color: #4caf50;
 }
 
+.about-text {
+  font-family: Podkova, Serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 .sign-in-box {
   padding-top: 15px;
   margin-right: 15px ;
@@ -209,6 +213,13 @@ margin: 15px;
   height: 10px;
 }
 
-.project-list-container {
-  background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(0, 231, 255, 0.65) 77.73%);
+.landing-menu-item {
+  background: #7fffff;
+}
+
+.landing-menu-item:hover {
+  background: #23bfa2;
+  box-shadow: black;
+  font-weight: bold;
+  border: darkslategrey;
 }
