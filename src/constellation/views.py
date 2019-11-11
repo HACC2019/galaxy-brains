@@ -94,6 +94,7 @@ def createproject(request):
 
 def projectPage(request, project = ""):
     metadata["project_information"] = getProjectFromName(project)
+    print(metadata["project_information"])
     return render(request, 'project_page.html', metadata)
 
 def pageNotFound(request):
