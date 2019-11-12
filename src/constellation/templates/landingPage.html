@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" style="margin-top: 10%; margin-bottom: 10px; margin-left: 37%">
 
-    <div class="list-group list-group-horizontal-sm">
-        <ul class="">
-            <a class="list-group-item list-group-item-action landing-menu-item" onclick="location.href='../projectlisting'">Project List</a>
-            <li class="list-group-item">School List</li>
-            <li class="list-group-item">???</li>
-        </ul>
+<div style="background: linear-gradient(0.4deg, rgba(192, 254, 224, 0) 0.33%, rgba(99, 255, 189, 0.65) 77.73%); padding-top: 10px">
+    <div class="container" style="margin-top: 8%; margin-left: 43%; margin-bottom: 25px" >
+        <img src="../static/images/logo.png" width="150px" height="150px" />
+    </div>
+<div class="container" style="margin-bottom: 10px; margin-left: 30%;">
+
+    <div class="list-group list-group-horizontal-sm shadow" style="margin-right:50%; cursor: pointer">
+        <a class="landing-page-menu-item list-group-item list-group-item-action" onclick="location.href='../'"><ion-icon name="home"></ion-icon>Home</a>
+        <a class="landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='../projectlisting'"><ion-icon name="list-box"></ion-icon>Project List</a>
+        <a class= "landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='{% url "createproject" %}' "><ion-icon name="star"></ion-icon>Create a Project</a>
     </div>
 </div>
 <div class="container">
@@ -93,12 +96,7 @@
 
     </div>
 </div>
-
-<div class="container">
-    
 </div>
 
 
-
 {% endblock %}
->>>>>>> 64374f0d3f6953dbb23c3cb3d7aee12c1d6f2a11
