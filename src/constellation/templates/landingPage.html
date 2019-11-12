@@ -11,7 +11,9 @@
     <div class="list-group list-group-horizontal-sm shadow" style="margin-right:50%; cursor: pointer">
         <a class="landing-page-menu-item list-group-item list-group-item-action" onclick="location.href='../'"><ion-icon name="home"></ion-icon>Home</a>
         <a class="landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='../projectlisting'"><ion-icon name="list-box"></ion-icon>Project List</a>
+	{% if role == 'teacher' %}
         <a class= "landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='{% url "createproject" %}' "><ion-icon name="star"></ion-icon>Create a Project</a>
+	{% endif %}
     </div>
 </div>
 <div class="container">
@@ -35,19 +37,14 @@
                 <div class="card-header">
                     <h3>Elementary School</h3>
                 </div>
+		{% for i in recentschools.elementary %}
                 <div class="card-project" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Erase The Wastepollution Solution<br></h5>
-                        <p class="card-text">What type of function (linear or quadratic) better correlates to a given data set? How does one know which provides a better fit for the data?How can one use linear or quadratic functions to predict the
-                            chances of hitting a target from a certain distance</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
                     </div>
                 </div>
-                <div class="card-project" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">EH MAHINA, HOWZIT GROWING<br></h5>
-                        <p class="card-text">What plants grow in relation to how the moon grows</p> <a href=../projectpage/eh-mahina-howzit-growing class="btn btn-primary">More info</a>
-                    </div>
-                </div>
+		{% endfor %}
             </div>
         </div>
 
@@ -57,19 +54,14 @@
                 <div class="card-header">
                     <h3>Middle School</h3>
                 </div>
+		{% for i in recentschools.middle %}
                 <div class="card-project" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Voyager Meal Planning<br></h5>
-                        <p class="card-text">What kinds of meals are appropriate for a long distance voyage?</p> <a href=../projectpage/voyager-meal-planning class="btn btn-primary">More info</a>
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
                     </div>
                 </div>
-                <div class="card-project" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Coral Reef, Climate Change, and You<br></h5>
-                        <p class="card-text">How do we know if carbon dioxide levels are rising and what can I do about it in my personal life and in my community to affect change?</p> <a href=../projectpage/coral-reef-climate-change-and-you
-                            class="btn btn-primary">More info</a>
-                    </div>
-                </div>
+		{% endfor %}
             </div>
         </div>
         <div class="col-md-4">
@@ -77,20 +69,14 @@
                 <div class="card-header">
                     <h3>High School</h3>
                 </div>
+		{% for i in recentschools.high %}
                 <div class="card-project" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">THE PIECEWISE FUNCTIONS OF FISHING PRODUCTIVITY ACCORDING TO THE HAWAIIAN MOON CALENDAR<br></h5>
-                        <p class="card-text">How can we create mathematical functions to model the Hawaiian moon calendar to determine fishing productivity?</p> <a
-                            href=../projectpage/the-piecewise-functions-of-fishing-productivity-according-to-the-hawaiian-moon-calendar class="btn btn-primary">More info</a>
+			<h5 class="card-title">{{ i.name }}<br></h5>
+                        <p class="card-text">{{ i.description }}</p> <a href=../projectpage/erase-the-wastepollution-solution class="btn btn-primary">More info</a>
                     </div>
                 </div>
-                <div class="card-project" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">THERMODYNAMICS: FOOD PACKAGING DESIGN<br></h5>
-                        <p class="card-text">What are the best materials to use for an insulated shave ice container that will be both cost-efficient and environmentally-friendly?</p> <a href=../projectpage/thermodynamics-food-packaging-design
-                            class="btn btn-primary">More info</a>
-                    </div>
-                </div>
+		{% endfor %}
             </div>
         </div>
 
