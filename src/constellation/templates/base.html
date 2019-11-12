@@ -39,8 +39,10 @@
 
       <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
       <a class="navbar-brand nav-item" href="{% url 'projectList' %}">Project List</a>
-        {% if loggedin %}
+      {% if loggedin %}
+      {% if role == 'teacher' %}
       <a class="navbar-brand nav-item" href={% url 'createproject' %}>Create Project</a>
+      {% endif %}
       <a class="navbar-brand nav-link ml-auto"  href={% url 'logoutsubmit' %} >LOGOUT</a>
       {% else %}
       <a class="navbar-brand nav-item ml-auto" style="float: right;" href={% url 'signup' %} >Sign Up</a>

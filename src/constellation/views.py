@@ -13,7 +13,6 @@ config = {
 }
 
 firebase = pyrebase.initialize_app(config)
-metadata = {"loggedin": False}
 
 """
 raise Http404
@@ -23,30 +22,32 @@ firebase_auth = firebase.auth()
 firebase_database = firebase.database()
 
 def index(request):
-    global metadata
-    if metadata["loggedin"]:
-        return render(request, 'landingPage.html', metadata)
-    else:
-        return render(request, 'index.html', metadata)
+    try:
+        user = firebase_auth.get_account_info(request.session['uid'])['users'][0]['localId']
+        request.session['metadata'] = {'loggedin': True, 'role': firebase_database.child('users').child(user).child('role').get(request.session['uid']).val()}
+        request.session['metadata']['recentschools'] = recentProjectsSchools(3)
+        return render(request, 'landingPage.html', request.session['metadata'])
+    except:
+        request.session['metadata'] = {'loggedin': False}
+        return render(request, 'index.html', request.session['metadata'])
 
 def signup(request):
-    if metadata["loggedin"]:
+    try:
+        firebase_auth.get_account_info(request.session['uid'])
         return redirect('404')
-    else:
-        return render(request, 'signup.html', metadata)
+    except:
+        return render(request, 'signup.html', request.session['metadata'])
 
 def signInSubmit(request):
-    global metadata
     email = request.POST.get('email')
     password = request.POST.get('password')
 
     try:
         user = firebase_auth.sign_in_with_email_and_password(email, password)
         request.session['uid'] = str(user['idToken'])
-        metadata["loggedin"] = True
     except:
         messages.success(request, ('Invalid Credentials'))
-        return redirect('index')
+
     return redirect('index')
 
 def signUpSubmit(request):
@@ -67,38 +68,38 @@ def signUpSubmit(request):
         results = firebase_database.child("users").child(user['localId']).set(data, user['idToken'])
     except Exception as e:
         messages.success(request, json.loads(e.args[1])['error']['message'])
-        return redirect('index')
         
     return redirect('index')
 
 
 def logoutSubmit(request):
-    global metadata
-    metadata["loggedin"] = False
     auth.logout(request)
     messages.success(request, ('You have been logged out'))
     return redirect('index')
 
 def landingPage(request):
-    global metadata
-    return render(request, 'landingPage.html', metadata)
+    return render(request, 'landingPage.html', request.session['metadata'])
 
 def projectListCard(request):
-    return render(request, 'projectlistcard.html', metadata)
+    return render(request, 'projectlistcard.html', request.session['metadata'])
 
 def createproject(request):
-    if metadata["loggedin"]:
-        return render(request, 'createproject.html', metadata)
+    try:
+        localId = firebase_auth.get_account_info(request.session['uid'])['users'][0]['localId']
+    except:
+        return redirect('index')
+
+    if firebase_database.child("users").child(localId).child('role').get(request.session['uid']).val() == 'teacher':
+        return render(request, 'createproject.html', request.session['metadata'])
     else:
         return redirect('404')
 
 def projectPage(request, project = ""):
-    metadata["project_information"] = getProjectFromName(project)
-    print(metadata["project_information"])
-    return render(request, 'project_page.html', metadata)
+    request.session['metadata']["project_information"] = getProjectFromName(project)
+    return render(request, 'project_page.html', request.session['metadata'])
 
 def pageNotFound(request):
-    return render(request, '404.html')
+    return render(request, '404.html', request.session['metadata'])
 
 def createProjectSubmit(request):
     data = {
@@ -140,7 +141,19 @@ def getProjectFromName(name):
     return result
 
 def projectList(request):
-    global metadata
-    metadata["projects"] = firebase_database.child("projects").child("approved-projects").get().val() 
-    return render(request, 'projectlist.html', metadata)
+    request.session['metadata']["projects"] = firebase_database.child("projects").child("approved-projects").get().val() 
+    return render(request, 'projectlist.html', request.session['metadata'])
 
+def recentProjectsSchools(n):
+    projects = firebase_database.child('projects').child('approved-projects').get().val()
+    results = {'elementary': [], 'middle': [], 'high': []}
+    for key, i in projects.items():
+        if len(results['elementary']) < n and (i['grade'] == 'k' or i['grade'] <= 5):
+            results['elementary'].append(i)
+        if len(results['middle']) < n and 6 <= i['grade'] <= 8:
+            results['middle'].append(i)
+        if len(results['high']) < n and 9 <= i['grade'] <= 12:
+            results['high'].append(i)
+        if len(results['high']) == len(results['middle']) == len(results['elementary']) == n:
+            break
+    return results
