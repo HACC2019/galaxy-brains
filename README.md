@@ -1,3 +1,5 @@
+![GB Logo](https://raw.githubusercontent.com/HACC2019/galaxy-brains/master/src/constellation/static/images/logo.png)
+
 # Galaxy-Brains
 Hub designed to educate and provide a resource for communities to take part in sustainability projects in accordance with the Aloha+ standards.
 
