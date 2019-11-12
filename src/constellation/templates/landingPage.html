@@ -11,7 +11,10 @@
     <div class="list-group list-group-horizontal-sm shadow" style="margin-right:50%; cursor: pointer">
         <a class="landing-page-menu-item list-group-item list-group-item-action" onclick="location.href='../'"><ion-icon name="home"></ion-icon>Home</a>
         <a class="landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='../projectlisting'"><ion-icon name="list-box"></ion-icon>Project List</a>
-	{% if role == 'teacher' %}
+	{% if role == 'admin' %}
+        <a class="landing-page-menu-item list-group-item list-group-item-action"onclick="location.href='{% url "potentialProjectsList" %}'"><ion-icon name="list-box"></ion-icon>Potential Projects List</a>
+	{% endif %}
+	{% if role == 'teacher' or role == 'admin'%}
         <a class= "landing-page-menu-item list-group-item list-group-item-action " onclick="location.href='{% url "createproject" %}' "><ion-icon name="star"></ion-icon>Create a Project</a>
 	{% endif %}
     </div>

@@ -74,6 +74,7 @@ def signUpSubmit(request):
 
 def logoutSubmit(request):
     auth.logout(request)
+    request.session['metadata'] = {}
     messages.success(request, ('You have been logged out'))
     return redirect('index')
 
@@ -97,6 +98,17 @@ def createproject(request):
 def projectPage(request, project = ""):
     request.session['metadata']["project_information"] = getProjectFromName(project)
     return render(request, 'project_page.html', request.session['metadata'])
+
+def potentialProjectPage(request, project = ""):
+    request.session['metadata']['project_information'] = getProjectFromName(project)
+    request.session['metadata']['name'] = project
+    return render(request, 'potential_project_page.html', request.session['metadata'])
+
+def confirmation(request, project = ""):
+    return render(request, 'confirmation.html', request.session['metadata']) 
+
+def approveproject(request, project = ""):
+    return redirect('potentialProjectsList')
 
 def pageNotFound(request):
     return render(request, '404.html', request.session['metadata'])
@@ -141,8 +153,19 @@ def getProjectFromName(name):
     return result
 
 def projectList(request):
-    request.session['metadata']["projects"] = firebase_database.child("projects").child("approved-projects").get().val() 
+    request.session['metadata']['projects'] = firebase_database.child("projects").child("approved-projects").get().val() 
     return render(request, 'projectlist.html', request.session['metadata'])
+
+def potentialProjectsList(request):
+    try:
+        user = firebase_auth.get_account_info(request.session['uid'])['users'][0]['localId']
+    except:
+        return redirect('index')
+    if request.session['metadata']['role'] != 'admin':
+        return redirect('404')
+
+    request.session['metadata']['projects'] = firebase_database.child('projects').child('potential-projects').get().val()
+    return render(request, 'potential_project_list.html', request.session['metadata'])
 
 def recentProjectsSchools(n):
     projects = firebase_database.child('projects').child('approved-projects').get().val()
