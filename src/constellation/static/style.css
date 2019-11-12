@@ -3,6 +3,17 @@
   font-family: Podkova, Serif;
 }
 
+.landing-page-menu-item {
+  background: #2cff41;
+
+}
+
+.landing-page-menu-item:hover {
+  cursor: pointer;
+  background: #3da700;
+  font-weight: bold;
+}
+
 .light-green {
   color: #4caf50;
 }
@@ -213,13 +224,3 @@ margin: 15px;
   height: 10px;
 }
 
-.landing-menu-item {
-  background: #7fffff;
-}
-
-.landing-menu-item:hover {
-  background: #23bfa2;
-  box-shadow: black;
-  font-weight: bold;
-  border: darkslategrey;
-}
