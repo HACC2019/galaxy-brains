@@ -9,7 +9,6 @@ Hub designed to educate and provide a resource for communities to take part in s
 5. `cd galaxy-brains`
 6. `cd src`
 7. `python3 mangage.py runserver`/ `python manage.py runserver`  if python3 is your default python 
-8. Proceed to [Scholar-Space](http://127.0.0.1:8000/)
+8. Proceed to [Scholar-Space](http://127.0.0.1:8000/) (Which should be on localhost:8000)
 
-## Aloha+ Goals
-
+## [Click here for more information](https://devpost.com/software/galaxy-brains)
