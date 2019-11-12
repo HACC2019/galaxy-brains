@@ -102,12 +102,16 @@ def projectPage(request, project = ""):
 def potentialProjectPage(request, project = ""):
     request.session['metadata']['project_information'] = getProjectFromName(project)
     request.session['metadata']['name'] = project
+    request.session.modified = True
     return render(request, 'potential_project_page.html', request.session['metadata'])
 
 def confirmation(request, project = ""):
     return render(request, 'confirmation.html', request.session['metadata']) 
 
 def approveproject(request, project = ""):
+    data = firebase_database.child("projects").child('potential-projects').child(project).get().val()
+    firebase_database.child('projects').child('approved-projects').child(project).set(data)
+    firebase_database.child("projects").child('potential-projects').child(project).remove()
     return redirect('potentialProjectsList')
 
 def pageNotFound(request):
@@ -142,13 +146,9 @@ def createProjectSubmit(request):
     return redirect('index')
 
 def getProjectFromName(name):
-    try:
-        result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
-    except:
-        try:
-            result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
-        except:
-            result = None
+    result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
+    if not result:
+        result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
 
     return result
 

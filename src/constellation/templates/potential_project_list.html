@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <title>Potential Project Listing</title>
+    <main>
+
+        <div class="project-list-container" style="padding-top: 5%;">
+            <header style="font-weight: bold; margin-top: auto; text-align: center; font-size: 100px">
+                Potential Project Listing
+            </header>
+           <div class="container" style="margin-left: 20%">
+             <div class="card-group" style="width: auto">
+	     {% for key, value in projects.items %}
+	     <div class="card-project" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">{{ value.name }}<br></h5> <p class="card-text">{{ value.description }}</p> <a href=../potentialprojectpage/{{ key }} class="btn btn-primary">More Information</a> </div> </div>
+	     {% endfor %}
+        </div>
+        </div>
+        </div>
+    </main>
+{% endblock %}
