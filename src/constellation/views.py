@@ -74,6 +74,7 @@ def signUpSubmit(request):
 
 def logoutSubmit(request):
     auth.logout(request)
+    request.session['metadata'] = {}
     messages.success(request, ('You have been logged out'))
     return redirect('index')
 
@@ -97,6 +98,21 @@ def createproject(request):
 def projectPage(request, project = ""):
     request.session['metadata']["project_information"] = getProjectFromName(project)
     return render(request, 'project_page.html', request.session['metadata'])
+
+def potentialProjectPage(request, project = ""):
+    request.session['metadata']['project_information'] = getProjectFromName(project)
+    request.session['metadata']['name'] = project
+    request.session.modified = True
+    return render(request, 'potential_project_page.html', request.session['metadata'])
+
+def confirmation(request, project = ""):
+    return render(request, 'confirmation.html', request.session['metadata']) 
+
+def approveproject(request, project = ""):
+    data = firebase_database.child("projects").child('potential-projects').child(project).get().val()
+    firebase_database.child('projects').child('approved-projects').child(project).set(data)
+    firebase_database.child("projects").child('potential-projects').child(project).remove()
+    return redirect('potentialProjectsList')
 
 def pageNotFound(request):
     return render(request, '404.html', request.session['metadata'])
@@ -130,19 +146,26 @@ def createProjectSubmit(request):
     return redirect('index')
 
 def getProjectFromName(name):
-    try:
-        result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
-    except:
-        try:
-            result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
-        except:
-            result = None
+    result = firebase_database.child("projects").child("approved-projects").child(name).get().val()
+    if not result:
+        result = firebase_database.child("projects").child("potential-projects").child(name).get().val()
 
     return result
 
 def projectList(request):
-    request.session['metadata']["projects"] = firebase_database.child("projects").child("approved-projects").get().val() 
+    request.session['metadata']['projects'] = firebase_database.child("projects").child("approved-projects").get().val() 
     return render(request, 'projectlist.html', request.session['metadata'])
+
+def potentialProjectsList(request):
+    try:
+        user = firebase_auth.get_account_info(request.session['uid'])['users'][0]['localId']
+    except:
+        return redirect('index')
+    if request.session['metadata']['role'] != 'admin':
+        return redirect('404')
+
+    request.session['metadata']['projects'] = firebase_database.child('projects').child('potential-projects').get().val()
+    return render(request, 'potential_project_list.html', request.session['metadata'])
 
 def recentProjectsSchools(n):
     projects = firebase_database.child('projects').child('approved-projects').get().val()
