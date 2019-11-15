@@ -24,6 +24,8 @@
 
   <!--<link rel="stylesheet" type="text/css" href="{%static 'style.css'%}"> -->
   <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <link rel="stylesheet" type="text/css" href="https://www2.hawaii.edu/~uc/style.css">
+
 
   <!-- Javascrip/jquery for bootstrap components -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -37,7 +39,9 @@
     <div>
       <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"/>
 
-      <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
+      <!-- <a class="navbar-brand" href={% url 'index' %}><img src="../static/images/logo.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a> -->
+      <a class="navbar-brand" href={% url 'index' %}><img src="https://i.imgur.com/HTYAtVI.png" width="75px" height="75px" style="margin-right: 10px"/>The Scholar System</a>
+
       <a class="navbar-brand nav-item" href="{% url 'projectList' %}">Project List</a>
       {% if loggedin %}
       {% if role == 'teacher' %}
